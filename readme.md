@@ -2,37 +2,65 @@
 
 ### Hello everyone, I wanted to prepare a short and concise reaction-tutorial for you in this project or in this work. in components, status, status update, redux, redirect And I will offer you more. I will provide you more readmes as I progress.
 
-## class component 
+## class component
 
 ```js
- class Personel extends React.Component {
-      state = {
-        name: "Ayhan",
-        array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      };
-      clickHandler = (e) => {
-        this.setState({
-          name: "Software Developer",
-        });
-      };
-      render() {
-        const { name, array } = this.state;
+class Personel extends React.Component {
+  state = {
+    name: 'Ayhan',
+    array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  }
+  clickHandler = (e) => {
+    this.setState({
+      name: 'Software Developer',
+    })
+  }
+  render() {
+    const { name, array } = this.state
 
-        return (
-          <>
-            <div>{name}</div>
-            <div style={{ display: "flex" }}>
-              {array.map((arr, idx) => (
-                <div key={idx} id={idx}>
-                  {arr}
-                </div>
-              ))}
+    return (
+      <>
+        <div>{name}</div>
+        <div style={{ display: 'flex' }}>
+          {array.map((arr, idx) => (
+            <div key={idx} id={idx}>
+              {arr}
             </div>
-            {name === "Ayhan" ? <div>what is your name ?</div> : ""}
-            <button onClick={this.clickHandler}>click meeee</button>
-          </>
-        );
-      }
-    }
-    ReactDOM.render(<Personel />, document.getElementById("root"));
+          ))}
+        </div>
+        {name === 'Ayhan' ? <div>what is your name ?</div> : ''}
+        <button onClick={this.clickHandler}>click meeee</button>
+      </>
+    )
+  }
+}
+ReactDOM.render(<Personel />, document.getElementById('root'))
+```
+## Function Component
+```js
+const MyTwoComponent = () => {
+  const name = 'ayhan'
+  const situation = 'online'
+  return (
+    <div>
+      <h3> {name} </h3>
+      <p>{situation}</p>
+    </div>
+  )
+}
+ReactDOM.render(<MyTwoComponent />, document.getElementById('root'))
+```
+
+```js
+function MyComponent() {
+  const name = 'ayhan'
+  const situation = 'online'
+  return (
+    <div>
+      <h3> {name} </h3>
+      <p>{situation}</p>
+    </div>
+  )
+}
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
