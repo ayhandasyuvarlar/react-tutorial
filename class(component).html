@@ -23,18 +23,35 @@
       state = {
         name: "Ayhan",
         array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        situation: "---",
       };
       clickHandler = (e) => {
         this.setState({
           name: "Software Developer",
         });
       };
+      changeHandler = (e) => {
+        console.log(e.target);
+        if (e.target.value === "situation") {
+          console.log("lutfen baska secim");
+        } else {
+          this.setState({
+            situation: e.target.value,
+          });
+        }
+      };
+      changeNameHandler = (e) => {
+        this.setState({
+          situation: e.target.value,
+        });
+      };
       render() {
-        const { name, array } = this.state;
+        const { name, array, situation } = this.state;
 
         return (
           <>
             <div>{name}</div>
+            <div>{situation}</div>
             <div style={{ display: "flex" }}>
               {array.map((arr, idx) => (
                 <div key={idx} id={idx}>
@@ -44,6 +61,21 @@
             </div>
             {name === "Ayhan" ? <div>what is your name ?</div> : ""}
             <button onClick={this.clickHandler}>click meeee</button>
+            <select name="state" id="state" onChange={this.changeHandler}>
+              <option value="situation">situation</option>
+              <option value="online">online</option>
+              <option value="offline">offline</option>
+              <option value="busy">busy</option>
+            </select>
+            {situation === "---" ? (
+              ""
+            ) : (
+              <input
+                type="text"
+                name="name"
+                onChange={this.changeNameHandler}
+              />
+            )}
           </>
         );
       }
