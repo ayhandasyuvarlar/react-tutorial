@@ -11,8 +11,15 @@ class App extends React.Component {
     ],
   };
 addUser = (name) =>{
-  console.log(name)
-}
+  let user = {
+    name : name ,
+    situation  : 'online'
+  }
+  let users = [...this.state.user , user]
+  this.setState({
+    user : users
+  })
+} 
   render() {
     return (
       <div className="App">

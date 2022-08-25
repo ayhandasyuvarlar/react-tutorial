@@ -142,32 +142,103 @@ export default App
 ```
 
 ```js
-import User from "./User";
+import User from './User'
 
-const UserList = ({users}) => {
-    return ( 
-        users.map((user , idx)=>{
-            return(
-                <User name={user.name} situation={user.situation} key={idx}/>
-            )
-        })
-     );
+const UserList = ({ users }) => {
+  return users.map((user, idx) => {
+    return <User name={user.name} situation={user.situation} key={idx} />
+  })
 }
- 
-export default UserList;
+
+export default UserList
 ```
 
 ```js
-const User = ({ name, situation  }) => {
+const User = ({ name, situation }) => {
   return (
     <div className="card">
-      <h1>{name ? 'Merhaba ': ''} İsmim {name}</h1>
+      <h1>
+        {name ? 'Merhaba ' : ''} İsmim {name}
+      </h1>
       <h3 className="situation">Durum : {situation}</h3>
       <button>Durumu Guncelle</button>
     </div>
-  );
-};
+  )
+}
 
-export default User;
+export default User
+```
 
+## Form Usage Communication between components
+
+```js
+import React, { Component } from 'react'
+
+export default class AddUser extends Component {
+  state = {
+    name: '',
+  }
+  submitHandler = (e) => {
+    e.preventDefault()
+    this.props.addUser(this.state.name)
+  }
+  changeHandler = (e) => {
+    this.setState({
+      name: e.target.value,
+    })
+  }
+  render() {
+    return (
+      <form onSubmit={this.submitHandler}>
+        <input type="text" id="name" onChange={this.changeHandler} />
+        <button> Kaydet</button>
+      </form>
+    )
+  }
+}
+```
+
+```js
+import React from 'react'
+import AddUser from './components/AddUser'
+import UserList from './components/UserList'
+
+class App extends React.Component {
+  state = {
+    user: [
+      { name: 'Ayhan', situation: 'online' },
+      { name: 'Ahmet', situation: 'online' },
+      { name: 'Ali', situation: 'offline' },
+    ],
+  }
+  addUser = (name) => {
+    console.log(name)
+  }
+  render() {
+    return (
+      <div className="App">
+        <UserList users={this.state.user} />
+        <hr />
+        <AddUser addUser={this.addUser} />
+      </div>
+    )
+  }
+}
+
+export default App
+```
+
+## Form Usage 2 , spread operator Communication between components
+
+```js
+addUser = (name) => {
+  let user = {
+    name: name,
+    situation: 'online',
+  }
+  let users = [...this.state.user, user]
+  this.setState({
+    user: users,
+  })
+}
 ```

@@ -6,7 +6,10 @@ export default class AddUser extends Component {
   };
   submitHandler = (e) => {
     e.preventDefault();
-    this.props.addUser(this.state.name)
+    this.props.addUser(this.state.name);
+    this.setState({
+      name: "",
+    });
   };
   changeHandler = (e) => {
     this.setState({
@@ -16,7 +19,12 @@ export default class AddUser extends Component {
   render() {
     return (
       <form onSubmit={this.submitHandler}>
-        <input type="text" id="name" onChange={this.changeHandler} />
+        <input
+          type="text"
+          id="name"
+          onChange={this.changeHandler}
+          value={this.state.name}
+        />
         <button> Kaydet</button>
       </form>
     );
