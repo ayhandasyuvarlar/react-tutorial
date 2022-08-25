@@ -242,3 +242,16 @@ addUser = (name) => {
   })
 }
 ```
+
+## Added Bootstrapp
+
+```js
+npm install bootstrap
+```
+
+### after is process
+
+```js
+/*index.js*/
+import 'bootstrap/dist/css/bootstrap.min.css'
+```
