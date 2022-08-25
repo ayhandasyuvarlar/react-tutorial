@@ -64,3 +64,15 @@ function MyComponent() {
 }
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
+
+
+## Creating an application environment with React
+
+```js 
+npx create-react-app my-app
+ ```
+### after the download is finished open terminal and this code write terminal
+
+```js 
+npm run start
+```
