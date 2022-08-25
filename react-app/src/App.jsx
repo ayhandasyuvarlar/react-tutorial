@@ -22,8 +22,12 @@ addUser = (name) =>{
 } 
   render() {
     return (
-      <div className="App">
-        <UserList users={this.state.user} />
+      <div className="container">
+        <div className="row">
+          <div className="col-4">
+          <UserList users={this.state.user} />
+          </div>
+        </div>
         <hr />
         <AddUser  addUser={this.addUser}/>
       </div>

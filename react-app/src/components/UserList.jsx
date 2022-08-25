@@ -4,7 +4,9 @@ const UserList = ({users}) => {
     return ( 
         users.map((user , idx)=>{
             return(
-                <User name={user.name} situation={user.situation} key={idx}/>
+               <div className="container">
+                 <User name={user.name} situation={user.situation} key={idx}/>
+               </div>
             )
         })
      );

@@ -18,14 +18,14 @@ export default class AddUser extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.submitHandler}>
-        <input
+      <form onSubmit={this.submitHandler} className='form-group'>
+        <input  className="form-control"
           type="text"
           id="name"
           onChange={this.changeHandler}
           value={this.state.name}
         />
-        <button> Kaydet</button>
+        <button className="btn btn-success mt-1"> Kaydet</button>
       </form>
     );
   }
