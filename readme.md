@@ -36,7 +36,9 @@ class Personel extends React.Component {
 }
 ReactDOM.render(<Personel />, document.getElementById('root'))
 ```
+
 ## Function Component
+
 ```js
 const MyTwoComponent = () => {
   const name = 'ayhan'
@@ -65,42 +67,97 @@ function MyComponent() {
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
-
 ## Creating an application environment with React
 
-```js 
+```js
 npx create-react-app my-app
- ```
+```
+
 ### after the download is finished open terminal and this code write terminal
 
-```js 
+```js
 npm run start
 ```
 
 ### Components state with accessories
 
-```js 
- /*APP.JS */
-import User from "./components/User";
-
+```js
+/*APP.JS */
+import User from './components/User'
 
 function App() {
   return (
     <div className="App">
-     <User name={'Ayhan'} situation={'online'}/>
-     <User name={'Ahmet'} situation={'online'}/>
-     <User name={'Kemal'} situation={'online'}/>
+      <User name={'Ayhan'} situation={'online'} />
+      <User name={'Ahmet'} situation={'online'} />
+      <User name={'Kemal'} situation={'online'} />
     </div>
-  );
+  )
 }
 
-export default App;
-
-
+export default App
 ```
 
-```js 
+```js
 /*User Js*/
+const User = ({ name, situation }) => {
+  return (
+    <div className="card">
+      <h1>
+        {name ? 'Merhaba ' : ''} İsmim {name}
+      </h1>
+      <h3 className="situation">Durum : {situation}</h3>
+      <button>Durumu Guncelle</button>
+    </div>
+  )
+}
+
+export default User
+```
+
+### Working with Lists
+
+```js
+import React from 'react'
+import UserList from './components/UserList'
+
+class App extends React.Component {
+  state = {
+    user: [
+      { name: 'Ayhan', situation: 'online' },
+      { name: 'Ahmet', situation: 'online' },
+      { name: 'Ali', situation: 'offline' },
+    ],
+  }
+  render() {
+    return (
+      <div className="App">
+        <UserList users={this.state.user} />
+      </div>
+    )
+  }
+}
+
+export default App
+```
+
+```js
+import User from "./User";
+
+const UserList = ({users}) => {
+    return ( 
+        users.map((user , idx)=>{
+            return(
+                <User name={user.name} situation={user.situation} key={idx}/>
+            )
+        })
+     );
+}
+ 
+export default UserList;
+```
+
+```js
 const User = ({ name, situation  }) => {
   return (
     <div className="card">
