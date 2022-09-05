@@ -344,3 +344,18 @@ const User = ({ user, deleteMethod, changeUpdateMethod }) => {
 export default User;
 
 ```
+
+### Higher Order Function
+#### In Javascript, functions can be assigned to variables in the same way that strings or arrays can. They can be passed into other functions as parameters or returned from them as well. A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
+
+```js
+ function  toConsole(str1){
+  return function(str2){
+    console.log(`${str1} ${str2}`)
+  }
+  
+ }
+ let hello = toConsole('Hi ,')
+ hello('Ayhan')
+ hello('Ahmet')
+```
