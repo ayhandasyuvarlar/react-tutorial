@@ -255,3 +255,92 @@ npm install bootstrap
 /*index.js*/
 import 'bootstrap/dist/css/bootstrap.min.css'
 ```
+
+
+### item is delete and update process
+```js
+/*app.jsx*/
+ deleteMethod = (id) => {
+    let tUsers = this.state.user.filter((us) => {
+      return us.id !== id;
+    });
+    this.setState({
+      user: tUsers,
+    });
+  };
+  changeUpdateMethod = (data) => {
+    console.log(data.situation);
+    let tUser = this.state.user.map((us) => {
+      if (us.id === data.id) {
+        us.situation = data.situation;
+      }
+      return us;
+    });
+    this.setState({
+      user: tUser,
+    });
+  };
+     <UserList
+              users={this.state.user}
+              deleteMethod={this.deleteMethod}
+              changeUpdateMethod={this.changeUpdateMethod}
+            />
+---------------------------------------------
+/*userlist.jsx */
+const UserList = ({ users , deleteMethod ,changeUpdateMethod }) => {
+     if(users.length > 0){
+       return users.map(user =>{
+        return(
+          <div className="container">
+          <User user={user} deleteMethod={()=>{deleteMethod(user.id)}} key={user.id} changeUpdateMethod={changeUpdateMethod}/>
+        </div>
+        )
+       })
+     }else{
+      return (
+        <div className="alert alert-danger mt-5">
+          Kullanıcı Bulunamadı
+        </div>
+      )
+    }}
+export default UserList;
+----------------------------------
+/*user.jsx*/
+const User = ({ user, deleteMethod, changeUpdateMethod }) => {
+  const changeHandler = (e) => {
+    changeUpdateMethod({ situation: e.target.value, id: user.id });
+  };
+  return (
+    <div className="col-12" id={user.id} key={user.id}>
+      <div className="card mt-1 p-5 w-100">
+        <button
+          className="btn btn-danger"
+          style={{ position: "absolute", right: "10px", top: "5px" }}
+          onClick={deleteMethod}
+        >
+          Sil
+        </button>
+        <h3>
+          {user.name ? "Merhaba " : ""} İsmim {user.name}
+        </h3>
+        <h3 className="situation">Durum : {user.situation}</h3>
+        <select
+          name="state"
+          id="state"
+          onChange={changeHandler}
+          className={"form-select"}
+          aria-label="Default select example"
+          value={user.situation}
+        >
+          <option value="online">online</option>
+          <option value="offline">offline</option>
+          <option value="busy">busy</option>
+        </select>
+      </div>
+    </div>
+  );
+};
+
+export default User;
+
+```
