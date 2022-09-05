@@ -4,4 +4,33 @@ body {
   font-style: normal;
   font-size: large;
 }
+a {
+  text-decoration: none;
+  color: #343434;
+  padding: 2px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav {
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+}
+nav .navContent {
+  width: 17%;
 
+}
+.navItem {
+  font-family: "Lexend Deca";
+  font-weight: normal;
+  font-style: normal;
+  font-size: large;
+}
+.navItem a {
+  text-decoration: none;
+  padding: 2px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
