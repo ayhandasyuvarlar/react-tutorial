@@ -1,4 +1,4 @@
-import { Link  ,withRouter} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavItem = ({ navItem }) => {
   return (
@@ -10,4 +10,4 @@ const NavItem = ({ navItem }) => {
   );
 };
 
-export default withRouter(NavItem);
+export default NavItem;

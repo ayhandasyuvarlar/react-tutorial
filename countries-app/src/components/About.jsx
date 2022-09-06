@@ -1,5 +1,4 @@
 import React from 'react'
-import LogButton from '../LogButton'
 
 function About(props) {
   return (
@@ -8,4 +7,4 @@ function About(props) {
     </div>
   )
 }
-export default LogButton(About)
+export default About
