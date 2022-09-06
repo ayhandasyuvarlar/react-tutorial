@@ -1,9 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Home from "./components/Home";
+import Countries from "./components/Countries";
+import Country from "./components/Country";
 import Navbar from "./components/Navbar";
+import LogButton from "./LogButton";
 
 function App() {
   return (
@@ -11,11 +13,12 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <div>
-          <Routes>
-          <Route path="/" element={<Home />} /> 
-          <Route path="/About" element={<About/>} /> 
-          <Route path="/Contact" element={<Contact/>} /> 
-          </Routes>
+          <Switch>
+            <Route component={Countries} path="/" exact />
+            <Route component={About} path="/About" />
+            <Route component={LogButton(Contact)} path="/Contact" />
+            <Route component={Country} path="/:name" />
+          </Switch>
         </div>
       </BrowserRouter>
     </>
