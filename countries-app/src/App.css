@@ -34,3 +34,31 @@ nav .navContent {
   justify-content: center;
   align-items: center;
 }
+.countryList{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.countryCard {
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:  20px 40px;
+  max-width: 25rem;
+  width: calc(100% / 2 - 30px);
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.countryCardBody {
+  text-align: center;
+}
+.countryCardCommon {
+  font-size: medium;
+  color: #3434344e;
+}
