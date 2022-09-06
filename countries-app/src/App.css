@@ -62,3 +62,14 @@ nav .navContent {
   font-size: medium;
   color: #3434344e;
 }
+.input {
+  margin: 40px auto;
+  width: 800px;
+  
+}
+.inputtext {
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border:1px solid gainsboro;
+}
