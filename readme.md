@@ -256,8 +256,8 @@ npm install bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 ```
 
-
 ### item is delete and update process
+
 ```js
 /*app.jsx*/
  deleteMethod = (id) => {
@@ -346,16 +346,42 @@ export default User;
 ```
 
 ### Higher Order Function
+
 #### In Javascript, functions can be assigned to variables in the same way that strings or arrays can. They can be passed into other functions as parameters or returned from them as well. A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
 
 ```js
- function  toConsole(str1){
-  return function(str2){
+function toConsole(str1) {
+  return function (str2) {
     console.log(`${str1} ${str2}`)
   }
-  
- }
- let hello = toConsole('Hi ,')
- hello('Ayhan')
- hello('Ahmet')
+}
+let hello = toConsole('Hi ,')
+hello('Ayhan')
+hello('Ahmet')
 ```
+
+### Life cycle events
+
+### Adding
+
+#### consturctor
+#### render
+#### componentDidMount
+
+### Update 
+
+#### render
+#### componentDidUpdate
+
+### Remove
+
+#### componentWillUnmount
+
+
+### Http Request
+
+#### GET , POST
+
+### Dependencies
+
+#### jQuery Ajax , Fetch Api ,  Superagent , request
