@@ -1,9 +1,11 @@
 import React from 'react'
+import LogButton from '../LogButton'
 
-export default function About() {
+function About(props) {
   return (
     <div>
       About
     </div>
   )
 }
+export default LogButton(About)
