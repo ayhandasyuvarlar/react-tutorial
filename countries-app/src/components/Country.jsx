@@ -14,14 +14,23 @@ export default class Country extends Component {
         });
       });
   }
+
   textArea = () => {
     let country = document.getElementById("country");
     let countrs = document.getElementById("countrs");
     setTimeout(() => {
       if (this.state.country.name) {
-        countrs.innerHTML = ''
-        return (country.innerText = this.state.country.name.common);
-
+        let data = this.state.country;
+        countrs.innerHTML = "";
+        country.innerHTML = `
+         <div class="card" style="width: 18rem;">
+                 <img src="${data.flags.png}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                         <h5 class="card-title">${data.name.official}</h5>
+                         <p class="card-text">${data.name.common}</p>
+                         ${data.name.common === 'Turkey'  ? 'Ne Mutlu Turkum Diyene , Ulu Önder Mustafa Kemal Atatürk'  : ''}
+                    </div>
+        </div>`;
       } else {
         return <div>yok</div>;
       }

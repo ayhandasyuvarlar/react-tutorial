@@ -347,7 +347,7 @@ export default User;
 
 ### Higher Order Function
 
-#### In Javascript, functions can be assigned to variables in the same way that strings or arrays can. They can be passed into other functions as parameters or returned from them as well. A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
+- In Javascript, functions can be assigned to variables in the same way that strings or arrays can. They can be passed into other functions as parameters or returned from them as well. A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
 
 ```js
 function toConsole(str1) {
@@ -364,24 +364,39 @@ hello('Ahmet')
 
 ### Adding
 
-#### consturctor
-#### render
-#### componentDidMount
+- consturctor
+- render
+- componentDidMount
 
 ### Update 
 
-#### render
-#### componentDidUpdate
+- render
+- componentDidUpdate
 
 ### Remove
 
-#### componentWillUnmount
+- componentWillUnmount
 
 
 ### Http Request
 
-#### GET , POST
+- GET , POST
 
 ### Dependencies
 
-#### jQuery Ajax , Fetch Api ,  Superagent , request
+- jQuery Ajax , Fetch Api ,  Superagent , request
+
+## What is Redux
+
+
+- It is a central data repository
+- All components can access the data inside regardless of hierarchy.
+- Data management made easy
+- Data transfer components
+   - Store
+   - action
+   - redux
+
+```js
+npm install react-redux redux
+```

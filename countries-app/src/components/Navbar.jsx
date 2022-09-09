@@ -3,7 +3,7 @@ import NavItem from "../toolbox/NavItem";
 
 const navItemList = [
   {
-    linkName: "HomePage",
+    linkName: "Ülke Seç",
     id: 1,
     link : '/'
   },
@@ -22,9 +22,6 @@ const navItemList = [
 const Navbar = () => {
   return (
     <nav>
-     <a href={'sass'}>
-        Ülke Seç
-     </a>
       {navItemList.map((nav) => {
         return <NavItem  navItem={nav} key={nav.id}/>;
       })}
