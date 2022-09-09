@@ -1,16 +1,8 @@
 import React from "react";
 import AddUser from "./components/AddUser";
 import UserList from "./components/UserList";
-
+import { connect } from "react-redux";
 class App extends React.Component {
-  state = {
-    idx: 4,
-    user: [
-      { name: "Ayhan", situation: "online", id: 1 },
-      { name: "Ahmet", situation: "online", id: 2 },
-      { name: "Ali", situation: "offline", id: 3 },
-    ],
-  };
   addUser = (name) => {
     let id = this.state.idx + 1;
     let user = {
@@ -44,12 +36,13 @@ class App extends React.Component {
     });
   };
   render() {
+    const { user } = this.props;
     return (
       <div className="container">
         <div className="row">
           <div className="col-4">
             <UserList
-              users={this.state.user}
+              users={user}
               deleteMethod={this.deleteMethod}
               changeUpdateMethod={this.changeUpdateMethod}
             />
@@ -61,5 +54,10 @@ class App extends React.Component {
     );
   }
 }
+const mapStateToProprs = (state) => {
+  return {
+    user: state.user,
+  };
+};
 
-export default App;
+export default connect(mapStateToProprs)(App);
