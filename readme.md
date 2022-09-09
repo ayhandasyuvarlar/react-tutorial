@@ -409,3 +409,4 @@ npm install react-redux redux
 - Forwarding operations
 - Parameterized Routing Operations
 - redux
+#### Thanks in advance everyone, the redux and hooks build will be literally added in addition.
