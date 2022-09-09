@@ -396,7 +396,7 @@ hello('Ahmet')
    - Store
    - action
    - redux
-
+![img](./img/redux.jpeg)
 ```js
 npm install react-redux redux
 ```
