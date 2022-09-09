@@ -400,3 +400,12 @@ hello('Ahmet')
 ```js
 npm install react-redux redux
 ```
+
+### What's Learned
+- Creating a React project
+- Elements and Components
+- Props
+- State usage and Life cycle
+- Forwarding operations
+- Parameterized Routing Operations
+- redux
